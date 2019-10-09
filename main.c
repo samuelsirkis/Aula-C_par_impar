@@ -12,7 +12,7 @@ int main() {
 	setlocale(LC_ALL, "");
 
 	//declaração das variaveis
-	int vet[TAM], i = 0, tam = 0, par[TAM], impar[TAM], contPar = 0, contImpar = 0, media = 0, soma = 0, maior = 0, menor = 0, posicao = 0;
+	int vet[TAM], i = 0, tam = 0, par[TAM], impar[TAM], contPar = 0, contImpar = 0, soma = 0, maior = 0, menor = 0, posicao = 0;
 	char sair = 0;
 
 	//chama o cabeçalho
@@ -52,8 +52,7 @@ int main() {
 
 	//calculo da media dos pares
 	if (soma != 0) {
-		media = soma / contPar;
-		printf("\nMédia dos números pares = %d\n", media);
+		printf("\nMédia dos números pares = %d\n", soma / contPar);
 		div();
 	}
 
@@ -69,7 +68,6 @@ int main() {
 	printf("\nMaior valor impar = %d => posição %d\n", maior, posicao + 1);
 
 	//encontra menor valor impar
-	posicao = 0;
 	menor = vet[0];
 	for (i = 1; i < tam; i++) {
 		if (vet[i] < menor && vet[i] % 2 != 0) {
@@ -83,7 +81,6 @@ int main() {
 	div();
 
 	// encontra o Menor valor do vetor principal
-	posicao = 0;
 	menor = vet[0];
 	for (i = 1; i < tam; i++) {
 		if (vet[i] < menor) {
@@ -135,5 +132,3 @@ char vaiSair(char sai) {
 	} while (sai != 's' && sai != 'n');
 	return sai;
 }
-
-
