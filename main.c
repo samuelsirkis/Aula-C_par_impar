@@ -12,8 +12,8 @@ int main() {
 	setlocale(LC_ALL, "");
 
 	//declaração das variaveis
-	int vet[TAM], i = 0, tam = 0, par[TAM], impar[TAM], tamP = 0, tamI = 0, media = 0, soma = 0, maior = 0, menor = 0, posicao = 0;
-	char sair=0;
+	int vet[TAM], i = 0, tam = 0, par[TAM], impar[TAM], contPar = 0, contImpar = 0, media = 0, soma = 0, maior = 0, menor = 0, posicao = 0;
+	char sair = 0;
 
 	//chama o cabeçalho
 	head();
@@ -30,20 +30,20 @@ int main() {
 	tam = i;
 	valor(tam);
 
-	//varrendo o vetor e atribuindo impar e par
+	//varrendo o vetor e atribuindo par e impar
 	for (i = 0; i < tam; i++) {
 		if (vet[i] % 2 == 0) {
-			par[tamP] = vet[i];
-			tamP++;
+			par[contPar] = vet[i];
+			contPar++;
 		}
 		else {
-			impar[tamI] = vet[i];
-			tamI++;
+			impar[contImpar] = vet[i];
+			contImpar++;
 		}
 	}
 
 	//calculo da soma
-	for (i = 0; i < tamP; i++) {
+	for (i = 0; i < contPar; i++) {
 		soma = soma + par[i];
 	}
 
@@ -52,7 +52,7 @@ int main() {
 
 	//calculo da media dos pares
 	if (soma != 0) {
-		media = soma / tamP;
+		media = soma / contPar;
 		printf("\nMédia dos números pares = %d\n", media);
 		div();
 	}
@@ -60,7 +60,7 @@ int main() {
 	//encontra maior valor impar
 	maior = vet[0];
 	for (i = 1; i < tam; i++) {
-		if (vet[i] > maior && vet[i] % 2 != 0) {
+		if (vet[i] > maior&& vet[i] % 2 != 0) {
 			maior = vet[i];
 			posicao = i;
 		}
@@ -81,6 +81,7 @@ int main() {
 	div();
 	printf("\nMenor valor impar = %d => posição %d\n", menor, posicao + 1);
 	div();
+
 	// encontra o Menor valor do vetor principal
 	posicao = 0;
 	menor = vet[0];
@@ -90,14 +91,15 @@ int main() {
 			posicao = i;
 		}
 	}
-	printf("\nMenor valor informado = %d", menor);
 
+	printf("\nMenor valor informado = %d", menor);
 	if (menor % 2 == 0) {
 		printf(" que é par.");
 	}
 	else {
 		printf(" que é impar.");
 	}
+
 	printf(" => posição %d\n\n", posicao + 1);
 	div();
 	system("pause");
@@ -134,7 +136,4 @@ char vaiSair(char sai) {
 	return sai;
 }
 
-int menorValor() {
-
-}
 
