@@ -71,7 +71,7 @@ int main() {
 	//encontra menor valor impar
 	posicao = 0;
 	menor = vet[0];
-	for (i = 1; i < tamI; i++) {
+	for (i = 1; i < tam; i++) {
 		if (vet[i] < menor && vet[i] % 2 != 0) {
 			menor = vet[i];
 			posicao = i;
@@ -132,5 +132,9 @@ char vaiSair(char sai) {
 		contaErro++;
 	} while (sai != 's' && sai != 'n');
 	return sai;
+}
+
+int menorValor() {
+
 }
 
