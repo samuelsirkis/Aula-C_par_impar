@@ -3,30 +3,30 @@
 #include <locale.h>
 
 #define TAM 20
-//chamada das funções
+//chamada das funÃ§Ãµes
 void div(); void head(); void valor(int tam); char vaiSair(char sai);
 
 int main() {
 
-	//define o indioma para português
+	//define o indioma para portuguÃªs
 	setlocale(LC_ALL, "");
 
-	//declaração das variaveis
+	//declaraÃ§Ã£o das variÃ¡veis
 	int vet[TAM], i = 0, tam = 0, par[TAM], impar[TAM], contPar = 0, contImpar = 0, soma = 0, maior = 0, menor = 0, posicao = 0;
 	char sair = 0;
 	//int menor2=0;
-	//chama o cabeçalho
+	//chama o cabeÃ§alho
 	head();
 
 	//entrada dos valores digitados
 	do {
-		printf("Digite o %2.dº número: ", i + 1);
+		printf("Digite o %2.dÂº nÃºmero: ", i + 1);
 		scanf_s("%d", &vet[i]);
 		sair = vaiSair(sair);
 		i++;
 	} while (sair != 's' && i < TAM);
 
-	//imprime a quantidade de números digitados
+	//imprime a quantidade de nÃºmeros digitados
 	tam = i;
 	valor(tam);
 	//menor2=vet[0];
@@ -47,7 +47,7 @@ int main() {
 		*/
 	}
 
-	//calculo da soma
+	//cÃ¡lculo da soma
 	for (i = 0; i < contPar; i++) {
 		soma = soma + par[i];
 	}
@@ -55,13 +55,13 @@ int main() {
 	printf("\nSoma dos numeros pares = %d\n", soma);
 	div();
 
-	//calculo da media dos pares
+	//cÃ¡lculo da media dos pares
 	if (soma != 0) {
-		printf("\nMédia dos números pares = %d\n", soma / contPar);
+		printf("\nMÃ©dia dos nÃºmeros pares = %d\n", soma / contPar);
 		div();
 	}
 
-	//encontra maior valor impar
+	//encontra maior valor Ã­mpar
 	/*forma alternativa de encontrar o maios e o menor
 	if (impar[i]!=0){
 		maior = impar[0];
@@ -83,9 +83,9 @@ int main() {
 		}
 	}
 
-	printf("\nMaior valor impar = %d => posição %d\n", maior, posicao + 1);
+	printf("\nMaior valor Ã­mpar = %d => posiÃ§Ã£o %d\n", maior, posicao + 1);
 
-	//encontra menor valor impar
+	//encontra menor valor Ã­mpar
 	menor = vet[0];
 	for (i = 1; i < tam; i++) {
 		if (vet[i] < menor && vet[i] % 2 != 0) {
@@ -95,7 +95,7 @@ int main() {
 	}
 
 	div();
-	printf("\nMenor valor impar = %d => posição %d\n", menor, posicao + 1);
+	printf("\nMenor valor Ã­mpar = %d => posiÃ§Ã£o %d\n", menor, posicao + 1);
 	div();
 
 	// encontra o Menor valor do vetor principal
@@ -109,13 +109,13 @@ int main() {
 
 	printf("\nMenor valor informado = %d", menor);
 	if (menor % 2 == 0) {
-		printf(" que é par.");
+		printf(" que Ã© par.");
 	}
 	else {
-		printf(" que é impar.");
+		printf(" que Ã© Ã­mpar.");
 	}
 
-	printf(" => posição %d\n\n", posicao + 1);
+	printf(" => posiÃ§Ã£o %d\n\n", posicao + 1);
 	div();
 	system("pause");
 	return 0;
@@ -127,7 +127,7 @@ void div() {
 
 void head() {
 	div();
-	printf("Informe até 20 números!");
+	printf("Informe atÃ© 20 nÃºmeros!");
 	div();
 }
 
@@ -142,7 +142,7 @@ char vaiSair(char sai) {
 	do {
 		if (contaErro != 0) {
 			//system("cls || clear");
-			printf("\n/\\ - Informe corretament\n");
+			printf("\n/\\ - Informe corretamente\n");
 		}
 		printf("Deseja sair (s/n)? ");
 		scanf(" %s", &sai);
