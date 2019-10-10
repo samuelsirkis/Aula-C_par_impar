@@ -14,7 +14,7 @@ int main() {
 	//declaração das variaveis
 	int vet[TAM], i = 0, tam = 0, par[TAM], impar[TAM], contPar = 0, contImpar = 0, soma = 0, maior = 0, menor = 0, posicao = 0;
 	char sair = 0;
-
+	//int menor2=0;
 	//chama o cabeçalho
 	head();
 
@@ -29,7 +29,7 @@ int main() {
 	//imprime a quantidade de números digitados
 	tam = i;
 	valor(tam);
-
+	//menor2=vet[0];
 	//varrendo o vetor e atribuindo par e impar
 	for (i = 0; i < tam; i++) {
 		if (vet[i] % 2 == 0) {
@@ -40,6 +40,11 @@ int main() {
 			impar[contImpar] = vet[i];
 			contImpar++;
 		}
+		/*
+		if(vet[i]<menor2){
+			menor2 =vet[i];		
+		}
+		*/
 	}
 
 	//calculo da soma
@@ -57,6 +62,19 @@ int main() {
 	}
 
 	//encontra maior valor impar
+	/*forma alternativa de encontrar o maios e o menor
+	if (impar[i]!=0){
+		maior = impar[0];
+		menor = impar[0];
+	}
+	for (i = 0; i < contImpar; i++) {
+		if (impar[i] > maior) {
+			maior = impar[i];
+		}
+		if (impar[i] < menor) {
+			menor = impar[i];
+		}
+	}*/
 	maior = vet[0];
 	for (i = 1; i < tam; i++) {
 		if (vet[i] > maior&& vet[i] % 2 != 0) {
